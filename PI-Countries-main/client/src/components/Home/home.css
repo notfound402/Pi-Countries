@@ -1,0 +1,40 @@
+.main-container{
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    /* background-color: rgb(114, 41, 114); */
+    margin :0;
+    padding: 0;
+     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,67,147,1) 35%, rgba(0,212,255,0.1) 100%); 
+     width: 100%;
+    height: 100%; 
+}
+
+.main-nav{
+
+display: flex;
+justify-content: space-between;
+padding-left: 30px;
+padding-right: 30px;
+align-items: center;
+
+}
+.main-body{
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    /* background-color: rgb(10, 60, 126); */
+
+}
+.main-filters{
+    padding: 30px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
