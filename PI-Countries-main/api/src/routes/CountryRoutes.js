@@ -16,7 +16,7 @@ router.get("/", SearchApi, async (req, res) => {
             {
               model: Activity,
               through: {
-                attributes: [],
+                attributes: [], // Me incluye la tabla actividad , y que dentro de esto me traiga los atributos
               },
             },
           ],
@@ -53,7 +53,7 @@ router.get("/", SearchApi, async (req, res) => {
   });
   
 
-  router.get("/:id", SearchApi, async (req, res) => {// hago busqueda por id
+  router.get("/:id", async (req, res) => {
     const { id } = req.params; 
 
     try {
