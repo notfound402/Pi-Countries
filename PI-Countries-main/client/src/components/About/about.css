@@ -1,17 +1,44 @@
 .main-container-about{
-    display: grid;
-    grid-template-columns: 100%;
+    margin: auto;
+    width: 100vw;
     height: 100vh;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,67,147,1) 35%, rgba(0,212,255,0.1) 100%);
-    text-align: center;
+    background: linear-gradient(138deg, rgba(37,36,99,1) 4%, rgba(76,21,107,1) 95%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
 .sub-container-about{
-    display: flex;
-    flex-wrap: wrap;
+    padding: 4rem;
+    border-radius: 20px;
+    text-align: center;
+    
+    width: 800px;
+    height: 400px;
+    background-color: aliceblue;
 }
 
+
 .button-back{
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 9rem;
+    height: 2.4rem;
+    background-color: rgb(31, 16, 67);
+    margin: auto;
     text-align: center;
+}
+.h4bu{
+    color: white;
+}
+.description-container-about{
+    display: grid;
+    gap: 4rem;
+}
+h2{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }

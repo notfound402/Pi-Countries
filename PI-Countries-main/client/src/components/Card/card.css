@@ -10,6 +10,7 @@
   
   } */
 .main-card-container{
+    border-radius: 20px;
     height: 500px;
     width: 500px;
     background-color: rgba(0, 0, 0, 0.2);
@@ -24,17 +25,30 @@
          text-decoration-line: none; 
 }
 
-.front-container{
-    height: 70px;
-    width: 80px;
-    border-top-left-radius: 50px 50px;
-   border-top-right-radius: 50px 50px;
-   border-bottom-left-radius: 50px 50px;
-   border-bottom-right-radius: 50px 50px;
+/* .front-container{
+    background-color: red;
+    /* height: 200px;
+    width: 200px; */
+   
+.text-container{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
 }
 
 
 .img{
-    height: 70px;
-    width: 70px;
+   
+    border-top-left-radius: 50px 50px;
+    border-top-right-radius: 50px 50px;
+    border-bottom-left-radius: 50px 50px;
+    border-bottom-right-radius: 50px 50px;
+    height: 190px;
+    width: 190px;
 }
+

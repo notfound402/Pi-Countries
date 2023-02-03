@@ -24,7 +24,7 @@ router.get('/', async(req,res)=>{
 
 
 
-router.post("/",SearchApi, async (req, res) => {
+router.post("/", async (req, res) => {
   const { name, difficulty, duration, season, countries } = req.body;
   try {
 	let requestCountries = await Country.findAll({

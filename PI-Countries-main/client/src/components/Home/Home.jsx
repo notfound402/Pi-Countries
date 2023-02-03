@@ -11,11 +11,11 @@ import "./home.css";
 export default function Home() {
   const allCountry = useSelector((state) => state.countries);
   const [currentPage, setCurrentPage] = useState(1);
-  const [countriesPerPage] = useState(9);
+  const [countriesPerPage,setCountriesPerPage] = useState(9);
   const indexOfLastCountry = currentPage * countriesPerPage;
-  const indexOfFirsCountry = indexOfLastCountry - countriesPerPage;
+  const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
   const currentCountries = allCountry.slice(
-    indexOfFirsCountry,
+    indexOfFirstCountry,
     indexOfLastCountry
   );
   const paginate = (pageNumber) => {
@@ -24,35 +24,34 @@ export default function Home() {
 
   return (
     <div className="main-container">
-
       <div className="main-nav">
-          <NavBar />
-          <SearchBar />
+        <NavBar />
+        <SearchBar />
       </div>
       <div className="main-body">
-                <div className="main-filters">
-                    <Filters />
-                    <Paginate
-                    countriesPerPage={countriesPerPage}
-                    allCountry={allCountry.length}
-                    paginate={paginate}
-                    />
-              </div>
+        <div className="main-filters">
+          <Filters />
+          <Paginate
+            countriesPerPage={countriesPerPage}
+            allCountry={allCountry.length}
+            paginate={paginate}
+          />
+        </div>
         <div className="cards">
-            {currentCountries?.map((x) => {
-              return (
-                <div key={x.id}>
-                  <Card
-                    id={x.id}
-                    name={x.name}
-                    continents={x.continent}
-                    flags={x.imagen}
-                    population={x.population}
-                  />
-                </div>
-              );
-            })}
-          </div>
+          {currentCountries?.map((x) => {
+            return (
+              <div key={x.id}>
+                <Card
+                  id={x.id}
+                  name={x.name}
+                  continents={x.continent}
+                  flags={x.imagen}
+                  population={x.population}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

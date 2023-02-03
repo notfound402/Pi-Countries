@@ -1,18 +1,14 @@
 .pagination{
-    display: flex;
-    flex-direction: row;
-    height: 25px;
+  display: flex;
+  flex-direction: row;
+  height: 25px;
 
 }
 
 .number {
-    font-size: 12px;
-    display: inline-flex;
-    padding: 3px;
-   color : blue;
-   
-  }
-
-  button{
-    color:black
-  }
+  font-size: 12px;
+  display: inline-flex;
+  padding: 3px;
+ color : rgb(232, 61, 255);
+ 
+}

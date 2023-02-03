@@ -1,31 +1,48 @@
+import {
+  GET_ACTIVITIES,
+  GET_COUNTRIES,
+  GET_COUNTRY_NAME,
+  GET_ALL_ACTIVITIES,
+  FILTER_BY_ACTIVITIES,
+  FILTER_BY_POPULATION,
+  FILTER_BY_CONTINENT,
+  CLEAN_DETAILS,
+  ORDER_BY_NAME
+} from "../actions/const";
+
 const initialState = {
   allCountries: [],
-  countriesName: [],
+  allActivities: [],
   details: [],
   activities: [],
   countries: [],
-  filtered: [],
 };
 
 export default function rootReducer(state = initialState, action) {
   switch (action.type) {
-    case "GET_COUNTRIES":
+    case GET_COUNTRIES:
       return {
         ...state,
         countries: action.payload,
         allCountries: action.payload,
+        allActivities: action.payload,
       };
-    case "GET_COUNTRY_NAME":
+    case GET_COUNTRY_NAME:
       return {
         ...state,
         countries: action.payload,
       };
-    case "CLEAN_DETAILS":
+    case CLEAN_DETAILS:
       return {
         ...state,
         details: [],
       };
-    case "ORDER_BY_NAME":
+    case GET_ALL_ACTIVITIES:
+      return {
+        ...state,
+        activities: action.payload,
+      };
+    case ORDER_BY_NAME:
       const sortedArr =
         action.payload === "asc"
           ? [...state.countries].sort(function (a, b) {
@@ -50,7 +67,7 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         countries: sortedArr,
       };
-    case "FILTER_BY_POPULATION": //orden por poblacion
+    case FILTER_BY_POPULATION: //orden por poblacion
       const filPopulation =
         action.payload === "menor"
           ? [...state.countries].sort(function (a, b) {
@@ -86,19 +103,24 @@ export default function rootReducer(state = initialState, action) {
           ? state.allCountries
           : filtrado.filter((x) => x.continent?.includes(action.payload));
 
-      
       return {
         ...state,
         countries: filter,
       };
     case "FILTER_BY_ACTIVITIES":
-      const countriesAct = state.allCountries;
-      const countriesactivities = countriesAct.filter((e) => {
-        return e.activities.includes(action.payload);
-      });
+      const allActivities = state.countries;
+      
+      const activityFilter =
+        action.payload === "All" 
+          ? 
+           state.allCountries
+          : allActivities.filter(c => c.activities.some(a => a.name === action.payload));
+            ;
+
+            console.log(activityFilter)
       return {
         ...state,
-        countries: countriesactivities,
+        countries: activityFilter,
       };
 
     case "GET_COUNTRY_DETAIL":

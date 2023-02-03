@@ -24,7 +24,7 @@ module.exports = (sequelize) =>{
             type : DataTypes.INTEGER,
             allowNull : false,
             get(){
-                return this.getDataValue('duration') + 'hrs,'
+                return this.getDataValue('duration') + 'hrs,' // investigar
             }
         },
         season : {

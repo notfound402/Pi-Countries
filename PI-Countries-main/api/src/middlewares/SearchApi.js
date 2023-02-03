@@ -13,7 +13,7 @@ module.exports = async (req, res, next) => {
       return {
         id: x.cca3,
         name: x.name.common,
-        imagen: x.flags.svg,
+        imagen: x.flags.png,
         continent: x.continents[0],
         capital: x.capital ? x.capital[0] : "No capital",
         subregion: x.subregion,

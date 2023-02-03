@@ -1,5 +1,24 @@
 .main-input{
- width: 100px;
- height: 20px;
-
-}
+    width: 200px;
+    height:2.4rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: none;
+    padding-left: 1rem;
+   
+   }
+   .main-filter-button-s{
+     background-color: rgb(158, 67, 219);
+     color: white;
+     border-radius: 10px;
+    border: none;
+     height:2.4rem;
+     width: 100px;
+   }
+   
+   .search-nav{
+     display: flex;  
+     flex-direction: row;
+     gap: 1rem;
+   
+   }
